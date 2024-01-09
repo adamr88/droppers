@@ -84,6 +84,7 @@ add_custom_target(really_clean
   COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/examples/${PE}Ex1.ilk
   COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/examples/${PE}Ex2.ilk
   COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/examples/${PE}Ex3.ilk
+  COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/examples/${PE}Ex4.ilk
 
   # dll examples
   COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/examples/${DLL}Ex0.exp

@@ -90,5 +90,10 @@ WINBASEAPI WINBOOL WINAPI CloseHandle(HANDLE hObject);
 WINBASEAPI WINBOOL WINAPI VirtualFree(LPVOID lpAddress, SIZE_T dwSize,
                                       DWORD dwFreeType);
 
+typedef void *HINSTANCE;
+typedef char *LPSTR;
+
+#define __cdecl
+
 #endif // _WIN32
 #endif // __STUB_WINDOWS
