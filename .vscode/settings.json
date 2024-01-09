@@ -7,13 +7,24 @@
 		"DWIN",
 		"egetchar",
 		"HWND",
+		"lpbuf",
 		"LPCSTR",
+		"LPDWORD",
+		"lpfl",
+		"LPSECURITY",
+		"LPTHREAD",
 		"masm",
 		"Mintel",
+		"PDWORD",
+		"PSECURITY",
 		"returnvalue",
 		"rundll",
 		"VALGRIND",
+		"WINBASEAPI",
 		"WINBOOL",
 		"xormut"
-	]
+	],
+	"files.associations": {
+		"windows.h": "c"
+	}
 }
