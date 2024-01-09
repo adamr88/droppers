@@ -20,6 +20,7 @@ endfunction()
 
 add_portable_executable(${PE}Ex0 pe/ex0.c)
 add_portable_executable(${PE}Ex1 pe/ex1.c)
+add_portable_executable(${PE}Ex2 pe/ex2.c)
 
 # Dynamic Linked Library (DLL)
 
