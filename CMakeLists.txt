@@ -28,6 +28,7 @@ if(STUB_WINDOWS_H)
         message(STATUS "Stubbing <windows.h> for ${CMAKE_CURRENT_LIST_FILE}")
   list(APPEND NOMAIN_SOURCES
     ${CMAKE_BINARY_DIR}/mock/stub/windows.c
+    ${CMAKE_BINARY_DIR}/mock/stub/tlhelp32.c
   )
   list(APPEND NOMAIN_INCLUDES
     ${CMAKE_BINARY_DIR}/mock
@@ -85,6 +86,7 @@ add_custom_target(really_clean
   COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/examples/${PE}Ex2.ilk
   COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/examples/${PE}Ex3.ilk
   COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/examples/${PE}Ex4.ilk
+  COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/examples/${PE}Ex5.ilk
 
   # dll examples
   COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/examples/${DLL}Ex0.exp

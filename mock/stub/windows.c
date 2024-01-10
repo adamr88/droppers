@@ -56,4 +56,34 @@ WINBASEAPI BOOL WINAPI VirtualFree(LPVOID lpAddress, size_t dwSize,
   return FALSE;
 }
 
+HANDLE WINAPI OpenProcess(DWORD dwDesiredAccess, BOOL bInheritHandle,
+                          DWORD dwProcessId) {
+  // if not mingw or windows
+  return NULL;
+}
+
+LPVOID WINAPI VirtualAllocEx(HANDLE hProcess, LPVOID lpAddress, SIZE_T dwSize,
+                             DWORD flAllocationType, DWORD flProtect) {
+  // if not mingw or windows
+  return NULL;
+}
+
+BOOL WINAPI WriteProcessMemory(HANDLE hProcess, LPVOID lpBaseAddress,
+                               LPCVOID lpBuffer, SIZE_T nSize,
+                               SIZE_T *lpNumberOfBytesWritten) {
+  // if not mingw or windows
+  return FALSE;
+}
+
+HANDLE WINAPI CreateRemoteThread(HANDLE hProcess,
+                                 LPSECURITY_ATTRIBUTES lpThreadAttributes,
+                                 SIZE_T dwStackSize,
+                                 LPTHREAD_START_ROUTINE lpStartAddress,
+                                 LPVOID lpParameter, DWORD dwCreationFlags,
+                                 LPDWORD lpThreadId) {
+
+  // if not mingw or windows
+  return NULL;
+}
+
 #endif

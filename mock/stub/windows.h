@@ -95,5 +95,34 @@ typedef char *LPSTR;
 
 #define __cdecl
 
+#define STANDARD_RIGHTS_REQUIRED (0x000F0000L)
+#define SYNCHRONIZE (0x00100000L)
+#define PROCESS_ALL_ACCESS (STANDARD_RIGHTS_REQUIRED | SYNCHRONIZE | 0xffff)
+#define PROCESS_CREATE_THREAD (0x0002)
+#define PROCESS_QUERY_INFORMATION (0x0400)
+#define PROCESS_VM_OPERATION (0x0008)
+#define PROCESS_VM_READ (0x0010)
+#define PROCESS_VM_WRITE (0x0020)
+
+HANDLE WINAPI OpenProcess(DWORD dwDesiredAccess, BOOL bInheritHandle,
+                          DWORD dwProcessId);
+
+LPVOID WINAPI VirtualAllocEx(HANDLE hProcess, LPVOID lpAddress, SIZE_T dwSize,
+                             DWORD flAllocationType, DWORD flProtect);
+
+#define CONST const
+typedef CONST void *LPCVOID;
+
+BOOL WINAPI WriteProcessMemory(HANDLE hProcess, LPVOID lpBaseAddress,
+                               LPCVOID lpBuffer, SIZE_T nSize,
+                               SIZE_T *lpNumberOfBytesWritten);
+
+HANDLE WINAPI CreateRemoteThread(HANDLE hProcess,
+                                 LPSECURITY_ATTRIBUTES lpThreadAttributes,
+                                 SIZE_T dwStackSize,
+                                 LPTHREAD_START_ROUTINE lpStartAddress,
+                                 LPVOID lpParameter, DWORD dwCreationFlags,
+                                 LPDWORD lpThreadId);
+
 #endif // _WIN32
 #endif // __STUB_WINDOWS

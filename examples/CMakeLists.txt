@@ -23,6 +23,7 @@ add_portable_executable(${PE}Ex1 pe/ex1.c)
 add_portable_executable(${PE}Ex2 pe/ex2.c)
 add_portable_executable(${PE}Ex3 pe/ex3.c)
 add_portable_executable(${PE}Ex4 pe/ex4.c)
+add_portable_executable(${PE}Ex5 pe/ex5.c)
 
 # Dynamic Linked Library (DLL)
 
