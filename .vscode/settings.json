@@ -6,6 +6,7 @@
 		"DNDEBUG",
 		"DWIN",
 		"egetchar",
+		"FARPROC",
 		"HINSTANCE",
 		"HWND",
 		"itertools",

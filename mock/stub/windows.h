@@ -124,5 +124,11 @@ HANDLE WINAPI CreateRemoteThread(HANDLE hProcess,
                                  LPVOID lpParameter, DWORD dwCreationFlags,
                                  LPDWORD lpThreadId);
 
+HMODULE WINAPI GetModuleHandle(LPCTSTR lpModuleName);
+
+typedef PVOID FARPROC;
+
+FARPROC WINAPI GetProcAddress(HMODULE hModule, LPCSTR lpProcName);
+
 #endif // _WIN32
 #endif // __STUB_WINDOWS

@@ -86,4 +86,14 @@ HANDLE WINAPI CreateRemoteThread(HANDLE hProcess,
   return NULL;
 }
 
+HMODULE WINAPI GetModuleHandle(LPCTSTR lpModuleName) {
+  // if not mingw or windows
+  return NULL;
+}
+
+FARPROC WINAPI GetProcAddress(HMODULE hModule, LPCSTR lpProcName) {
+  // if not mingw or windows
+  return NULL;
+}
+
 #endif
