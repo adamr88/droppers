@@ -130,5 +130,31 @@ typedef PVOID FARPROC;
 
 FARPROC WINAPI GetProcAddress(HMODULE hModule, LPCSTR lpProcName);
 
+typedef HANDLE HRSRC;
+typedef HANDLE HGLOBAL;
+typedef unsigned short WORD;
+
+typedef long *LONG_PTR;
+#define INVALID_HANDLE_VALUE ((HANDLE)(LONG_PTR)-1)
+
+#if defined(_WIN64)
+typedef unsigned __int64 ULONG_PTR;
+#else
+typedef unsigned long ULONG_PTR;
+#endif
+
+HRSRC WINAPI FindResource(HMODULE hModule, LPCSTR lpName, LPCSTR lpType);
+
+HGLOBAL WINAPI LoadResource(HMODULE hModule, HRSRC hResInfo);
+
+LPVOID WINAPI LockResource(HGLOBAL hResData);
+
+DWORD WINAPI SizeofResource(HMODULE hModule, HRSRC hResInfo);
+
+#define MAKEINTRESOURCE(i) ((LPSTR)((ULONG_PTR)((WORD)(i))))
+#define MAKEINTRESOURCEA(i) ((LPSTR)((ULONG_PTR)((WORD)(i))))
+#define MAKEINTRESOURCEW(i) ((LPWSTR)((ULONG_PTR)((WORD)(i))))
+#define RT_RCDATA MAKEINTRESOURCE(10)
+
 #endif // _WIN32
 #endif // __STUB_WINDOWS

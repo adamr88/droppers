@@ -30,3 +30,8 @@ add_portable_executable(${PE}Ex6 pe/ex6.c)
 
 add_dll(${DLL}Ex0 dll/Ex0.c)
 add_dll(${DLL}Ex1 dll/Ex1.c)
+
+# Resource files
+
+add_portable_executable(${PE}RsrcEx0 rsrc/ex0.c)
+target_sources(${PE}RsrcEx0 PUBLIC rsrc/resources.rc)

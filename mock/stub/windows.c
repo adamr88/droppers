@@ -96,4 +96,24 @@ FARPROC WINAPI GetProcAddress(HMODULE hModule, LPCSTR lpProcName) {
   return NULL;
 }
 
+HRSRC WINAPI FindResource(HMODULE hModule, LPCSTR lpName, LPCSTR lpType) {
+  // if not mingw or windows
+  return NULL;
+}
+
+HGLOBAL WINAPI LoadResource(HMODULE hModule, HRSRC hResInfo) {
+  // if not mingw or windows
+  return NULL;
+}
+
+LPVOID WINAPI LockResource(HGLOBAL hResData) {
+  // if not mingw or windows
+  return NULL;
+}
+
+DWORD WINAPI SizeofResource(HMODULE hModule, HRSRC hResInfo) {
+  // if not mingw or windows
+  return 4294967295; // -1
+}
+
 #endif
