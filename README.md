@@ -4,6 +4,8 @@
 
 Non Fully Undetectable (FUD) classic Dll Injector intended for educational purposes
 
+![Cover Art](.img/cover-art.jpeg)
+
 - [Droppers](#droppers)
 	- [Build options](#build-options)
 	- [Portable executable configuration](#portable-executable-configuration)
