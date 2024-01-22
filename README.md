@@ -107,7 +107,7 @@ Cross compiling on a shared virtual filesystem can lead to an indeterminate buil
 
 ## Source
 
-### Pe.c
+### [Pe.c](src/pe.c)
 
 Skeleton source code for a portable executable. Includes notes to
 
@@ -119,7 +119,7 @@ Skeleton source code for a portable executable. Includes notes to
 - Discover Windows API macro definitions
 - Discover Windows API typedef definitions
 
-### Dll.c
+### [Dll.c](src/dll.c)
 
 Skeleton source code for a Dynamic Linked Library. Includes simple message box
 
