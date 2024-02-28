@@ -28,8 +28,8 @@ add_portable_executable(${PE}Ex6 pe/ex6.c)
 
 # Dynamic Linked Library (DLL)
 
-add_dll(${DLL}Ex0 dll/Ex0.c)
-add_dll(${DLL}Ex1 dll/Ex1.c)
+add_dll(${DLL}Ex0 dll/ex0.c)
+add_dll(${DLL}Ex1 dll/ex1.c)
 
 # Resource files
 
