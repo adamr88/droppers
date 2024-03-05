@@ -4,8 +4,8 @@ if(NOT CMAKE_SYSTEM_NAME MATCHES "Linux")
 endif()
 
 set(CMAKE_SYSTEM_NAME Linux)
-set(CMAKE_C_COMPILER x86_64-w64-mingw32-gcc-12-win32)
-set(CMAKE_CXX_COMPILER x86_64-w64-mingw32-g++-12-win32)
+set(CMAKE_C_COMPILER x86_64-w64-mingw32-gcc-10-win32)
+set(CMAKE_CXX_COMPILER x86_64-w64-mingw32-g++-10-win32)
 
 # adjust the default behavior of the FIND_XXX() commands:
 # search programs in the host environment
