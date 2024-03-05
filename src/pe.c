@@ -1,7 +1,7 @@
 /**
  * @file src/pe.c
  * @author adamr88 (adamr88@github.com)
- * @brief Portable Executable MessageBox
+ * @brief Portable Executable Console message
  * @version 0.1
  * @date 2024-01-04
  *
@@ -54,4 +54,7 @@ int main() {
  *
  * Find Windows API component typedef declarations
  * grep --no-filename -E "^typedef" $WIN_INCLUDE/$FILES | grep -E "PVOID;$"
+ *
+ * Inspect PE (exe, dll) metadata (VirusTotal)
+ * exiftool PeDropper.exe
  */

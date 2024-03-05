@@ -1,7 +1,8 @@
 /**
  * @file examples/pe/ex5.c
  * @author adamr88 (adamr88@github.com)
- * @brief Encrypted WinAPI Windows Subsystem MessageBox shellcode Process Injection (PI)
+ * @brief Encrypted WinAPI Windows Subsystem MessageBox shellcode Process
+ * Injection (PI)
  * @version 0.1
  * @date 2024-01-04
  *
@@ -113,5 +114,5 @@ int main() {
 /**
  * @note
  * See examples/pe/ex3.c for payload creation details
- * 
+ *
  */

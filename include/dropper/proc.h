@@ -1,7 +1,7 @@
 /**
  * @file include/dropper/proc.h
  * @author adamr88 (adamr88@github.com)
- * @brief Utilities for inspecting and handling processes 
+ * @brief Utilities for inspecting and handling processes
  * @version 0.1
  * @date 2024-01-04
  *
