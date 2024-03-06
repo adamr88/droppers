@@ -17,10 +17,16 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -yqq \
 
 # windows emulator (experimental)
 
-# ENV WINEDEBUG -all
-# RUN dpkg --add-architecture i386 \
-# 	&& DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -yqq \
-# 	wine wine32:i386 wine64
+ENV WINEDEBUG -all
+RUN dpkg --add-architecture i386 \
+	&& DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -yqq \
+	wine wine32:i386 wine64
+
+# Packaging
+
+RUN apt-get -yqq install nsis p7zip-full
+
+# Clean up
 
 RUN apt-get -y autoremove && apt-get -y autoclean && rm -rf /var/lib/apt/lists/*
 

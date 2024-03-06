@@ -71,6 +71,36 @@ if(EXAMPLES)
 	add_subdirectory(examples)
 endif()
 
+# Packaging and Distribution
+
+option(PACKAGE "Build package" OFF)
+if(PACKAGE)
+  include(InstallRequiredSystemLibraries)
+
+  set(CPACK_GENERATOR "NSIS")
+  # There is a bug in NSI that does not handle full UNIX paths properly.
+  # Make sure there is at least one set of four backlashes.
+  # ref: https://github.com/TheErk/CMake-tutorial/blob/master/precompiled-PDFs/2016-09-27-CMake-tutorial.pdf
+  set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Package Description Summary ...")
+  set(CPACK_PACKAGE_VENDOR "CPack Package Vendor ...")
+  set(CPACK_PACKAGE_DESCRIPTION "Package Description ...")
+  set(CPACK_PACKAGE_VERSION_MAJOR 0)
+  set(CPACK_PACKAGE_VERSION_MINOR 1)
+  set(CPACK_PACKAGE_VERSION_PATCH 0)
+  SET(CPACK_PACKAGE_INSTALL_DIRECTORY "CMAKE ${CMAKE_VERSION_MAJOR}.${CMAKE_VERSION_MINOR}")
+  set(CPACK_NSIS_DISPLAY_NAME ${PE})
+  set(CPACK_NSIS_CONTACT "engineering@localhost")
+  set(CPACK_NSIS_MODIFY_PATH ON)
+  set(CPACK_PACKAGE_EXECUTABLES ${PE} "Portable Executable Dropper")
+
+  INSTALL(FILES ${PE}.exe
+    DESTINATION bin
+    CONFIGURATIONS Debug
+    COMPONENT Runtime)
+
+  include(CPack)
+endif()
+
 # Artifacts
 
 add_custom_target(really_clean
@@ -118,4 +148,10 @@ add_custom_target(cclean
   COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/examples/Makefile
   COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/examples/Testing
   COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/examples/cmake_install.cmake
+
+  # package files
+  COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/${CMAKE_PROJECT_NAME}-*
+  COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/CPack*.cmake
+  COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/_CPack_Packages
+  COMMAND ${CMAKE_COMMAND} -E rm -rf ${CMAKE_BINARY_DIR}/install_manifest.txt
 )

@@ -38,13 +38,15 @@ Non Fully Undetectable (FUD) classic Dll Injector intended for educational purpo
 
 Toggle ON/OFF with `cmake -D<XXX>=[ON,OFF]`
 
-| Option       | Default | Description                                        |
-| ------------ | ------- | -------------------------------------------------- |
-| CLANG_FORMAT | OFF     | Enable/disable clang-format code formatting        |
-| CPPCHECK     | OFF     | Enable/disable static code analysis using cppcheck |
-| EXAMPLES     | OFF     | Build/install example programs                     |
-| TESTING      | OFF     | Build and run unit tests                           |
-| VALGRIND     | OFF     | Run memory checker using Valgrind                  |
+| Option         | Default | Description                                        |
+| -------------- | ------- | -------------------------------------------------- |
+| CLANG_FORMAT   | OFF     | Enable/disable clang-format code formatting        |
+| CPPCHECK       | OFF     | Enable/disable static code analysis using cppcheck |
+| EXAMPLES       | OFF     | Build/install example programs                     |
+| PACKAGE        | OFF     | Build/install NSIS installer                       |
+| STUB_WINDOWS_H | OFF     | Build/install using windows.h stubs                |
+| TESTING        | OFF     | Build and run unit tests                           |
+| VALGRIND       | OFF     | Run memory checker using Valgrind                  |
 
 ## Portable executable configuration
 
@@ -87,6 +89,18 @@ Considering package management systems introduce idiosyncrasies and design decis
 When building all targets prepare for Windows Defender alerts. Consider disabling Defender for binary analysis
 
 ```sh
+# linux to windows
+cmake . \
+	-DCLANG_FORMAT=OFF \
+	-DCMAKE_BUILD_TYPE=Debug \
+	-DCMAKE_TOOLCHAIN_FILE=tools/cmake/toolchain/linux_mingw.cmake \
+	-DCPPCHECK=OFF \
+	-DEXAMPLES=OFF \
+	-DPACKAGE=OFF \
+	-DSTUB_WINDOWS_H=OFF \
+	-DTESTING=OFF \
+	-DVALGRIND=OFF
+
 # add debugger symbols
 cmake . -DCMAKE_BUILD_TYPE=Debug
 
